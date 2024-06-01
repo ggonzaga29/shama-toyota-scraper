@@ -131,15 +131,15 @@ const getVehicleMetadata = async (page: Page, vehicleLinks: VehicleLink[]) => {
   const page = await browser.newPage();
   await page.setViewport({ width: 1080, height: 1024 });
 
-  // const vehicleLinks = await getVehicleLinks(page);
-  // fs.writeFileSync(
-  //   "resources/vehicleLinks.json",
-  //   JSON.stringify(vehicleLinks, null, 2)
-  // );
+  const vehicleLinks = await getVehicleLinks(page) as VehicleLink[];
+  fs.writeFileSync(
+    "resources/vehicleLinks.json",
+    JSON.stringify(vehicleLinks, null, 2)
+  );
 
-  const vehicleLinks = JSON.parse(
-    fs.readFileSync("resources/vehicleLinks.json", "utf-8")
-  ) as VehicleLink[];
+  // const vehicleLinks = JSON.parse(
+  //   fs.readFileSync("resources/vehicleLinks.json", "utf-8")
+  // ) as VehicleLink[];
 
   await getVehicleMetadata(page, vehicleLinks);
 
