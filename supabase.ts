@@ -87,7 +87,7 @@ const uploadVariants = async (vehicleMetadata: VehicleMetadataWithVariants) => {
             /[<>:"/\\|?*\x00-\x1F]/g,
             ""
           );
-          const path = `cars/${filename}`;
+          const path = `${filename}`;
 
           const { error } = await supabase
             .from("vehicle_variant_images")
