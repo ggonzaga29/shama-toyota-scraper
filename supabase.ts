@@ -5,10 +5,7 @@ import fs from "fs";
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY!;
 
-
-
 const uploadImages = async (vehicleMetadata: VehicleMetadataWithVariants) => {
-  console.log(SUPABASE_ANON_KEY, SUPABASE_URL)
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   const formattedName = vehicleMetadata.name?.replace(/\s/g, "-").toLowerCase();
 

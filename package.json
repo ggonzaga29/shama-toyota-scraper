@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "get-metadata": "ts-node index.ts",
+    "transform": "ts-node transform.ts",
+    "supabase": "ts-node -r dotenv/config supabase.ts"
   },
   "author": "",
   "license": "ISC",
